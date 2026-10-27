@@ -1,30 +1,21 @@
-import ThemeToggle from "../Components/ThemeToggle";
-import ImageGallery from "../Components/ImageGallery";
+import Header from "../Components/Header";
 import AboutMe from "../Components/AboutMe";
 import Skills from "../Components/Skills";
 import Projects from "../Components/Projects";
+import Experience from "../Components/Experience";
 import Education from "../Components/Education";
 import Contact from "../Components/Contact";
 
-const images = [
-  "/Photos for website copy/Play/IMG_4546.JPG",
-  "/Photos for website copy/Play/IMG_8169.JPG",
-  "/Photos for website copy/Play/IMG_9414.HEIC",
-];
-
 const Home = () => (
-  <div className="min-h-screen bg-background text-foreground font-sans">
-    <h1 className="text-4xl font-bold mb-10">Jimi Aderele's Portfolio</h1>
-    <ThemeToggle />
-    <main className="flex flex-col gap-8 items-stretch max-w-3xl mx-auto px-4 sm:px-6 lg:px-0 pt-24">
-      <AboutMe />
-      <Skills />
-      <Projects />
-      <Education />
-      <ImageGallery images={images} />
-      <Contact />
-    </main>
-  </div>
+  <main className="mx-auto flex max-w-[1440px] flex-col gap-14 px-5 pb-20 pt-12 sm:px-10 lg:px-20 lg:pt-[72px]">
+    <Header />
+    <AboutMe />
+    <Skills />
+    <Projects />
+    <Experience />
+    <Education />
+    <Contact />
+  </main>
 );
 
 export default Home;

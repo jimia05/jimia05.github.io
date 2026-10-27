@@ -1,29 +1,23 @@
-import React from "react";
+import Section from "./Section";
 import Card from "./Card";
-
-const skills = [
-	"Java",
-	"React",
-	"Tailwind CSS",
-	"Python",
-	"C#",
-	"SQL",
-];
+import Chip from "./Chip";
+import { skillGroups } from "../data/content";
 
 const Skills = () => (
-	<Card>
-		<h2 className="text-2xl font-bold mb-4">Skills</h2>
-		<ul className="flex flex-wrap gap-3">
-			{skills.map((skill) => (
-				<li
-					key={skill}
-					className="px-4 py-2 bg-primary text-primary-foreground rounded-full shadow-sm font-medium transition hover:scale-105 hover:shadow-md"
-				>
-					{skill}
-				</li>
-			))}
-		</ul>
-	</Card>
+  <Section id="skills" title="Skills">
+    <Card tone="green" className="flex flex-col gap-5 p-6">
+      {skillGroups.map((group) => (
+        <div key={group.label} className="flex flex-col gap-2">
+          <h3 className="text-sm font-semibold text-muted">{group.label}</h3>
+          <ul className="flex flex-wrap gap-3">
+            {group.items.map((item) => (
+              <Chip key={item} borderClass="border-[#a7f3d0]">{item}</Chip>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </Card>
+  </Section>
 );
 
 export default Skills;

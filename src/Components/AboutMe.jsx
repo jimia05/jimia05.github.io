@@ -1,15 +1,18 @@
-import React from "react";
+import Section from "./Section";
 import Card from "./Card";
+import Button from "./Button";
+import { about } from "../data/content";
 
 const AboutMe = () => (
-  <Card>
-    <h2 className="text-2xl font-bold mb-2">About Me</h2>
-    <p>
-      Hi, my name is Fadejimi Aderele. I am a student at the University of
-      Indianapolis studying Computer Science. I am passionate about technology,
-      problem-solving, and building impactful projects. Outside of coding, you’ll probably find me investigating new tech products, watching Formula One, building LEGO or playing racing games.
-    </p>
-  </Card>
+  <Section id="about" title="About me">
+    <Card tone="blue" className="flex max-w-[600px] flex-col gap-5 p-8">
+      <p className="text-lg leading-[1.6] text-body">{about}</p>
+      <div className="flex flex-wrap gap-3">
+        <Button variant="blue" href="#projects">View projects</Button>
+        <Button variant="blueOutline" href="#contact">Get in touch</Button>
+      </div>
+    </Card>
+  </Section>
 );
 
 export default AboutMe;
